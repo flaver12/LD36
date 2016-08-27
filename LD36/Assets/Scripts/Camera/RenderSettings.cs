@@ -11,6 +11,7 @@ public class RenderSettings : MonoBehaviour {
 		Graphics.Blit(source, rt);
 		rt.filterMode = FilterMode.Point;
 		rt.antiAliasing = 1;
+        rt.anisoLevel = 0;
 		Graphics.Blit(rt, destination);
 		RenderTexture.ReleaseTemporary(rt);
 	}
