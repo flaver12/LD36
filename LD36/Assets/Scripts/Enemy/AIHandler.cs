@@ -1,17 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
-public class AI : MonoBehaviour {
+public class AIHandler : MonoBehaviour {
 
 	public int health = 100;
 	public GameObject enemy;
 	public GameObject player;
 
-	// Use this for initialization
-	void Start () {
-		NavMeshAgent agent = GetComponent<NavMeshAgent>();
-		agent.destination = player.transform.position;
-	}
+    // Use this for initialization
+    void Start () {
+
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,4 +27,5 @@ public class AI : MonoBehaviour {
 		this.health -= 10;
 		Debug.Log(health.ToString());
 	}
+
 }

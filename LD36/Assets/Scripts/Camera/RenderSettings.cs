@@ -3,7 +3,7 @@ using System.Collections;
 
 public class RenderSettings : MonoBehaviour {
 
-	[Range(0,100)]
+	[Range(0,10)]
 	public int DownRes;
 	public void OnRenderImage(RenderTexture source, RenderTexture destination)
 	{
