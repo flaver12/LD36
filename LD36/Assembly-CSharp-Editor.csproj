@@ -6,10 +6,10 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{77814973-4361-BB97-7FC6-6BCACF566D60}</ProjectGuid>
+    <ProjectGuid>{0921471C-2D0B-28B9-7025-4AC7516636FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>Assets</BaseDirectory>
@@ -45,47 +45,44 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\AI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\GridPlayer.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\GridPlayer2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\Lines.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SearchPlayerAI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SetGrid.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SimpleAI.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\SimpleAI2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\TDEnemy.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\TDManager.cs" />
-     <Compile Include="Assets\Pathfinding\Scenes\Scripts\WaypointPlayer.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\DynamicMapUpdate.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\DynamicTDGridObject.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Node.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\NodeSearch.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinder.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinder2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinding.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\Pathfinding2D.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\QueuePath.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointListNode.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointNode.cs" />
-     <Compile Include="Assets\Pathfinding\Scripts\WaypointPathfinder.cs" />
-     <Compile Include="Assets\RotateGround.cs" />
-     <Compile Include="Assets\Scripts\Camera\RenderSettings.cs" />
-     <Compile Include="Assets\Scripts\Enemy\AIHandler.cs" />
-     <Compile Include="Assets\Scripts\LevelLoader\LoadLevel.cs" />
-     <Compile Include="Assets\Scripts\LevelLoader\LoadLevelLD36.cs" />
-     <Compile Include="Assets\Scripts\LevelLoader\RecalculateNavMesh.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerAnimController.cs" />
-     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
-     <Compile Include="Assets\Scripts\Player\Shoot.cs" />
-     <Compile Include="Assets\Scripts\Weapons\BasicWeapon.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
-     <Compile Include="Assets\Scripts\Weapons\Shotgun.cs" />
+     <Compile Include="Assets\Pathfinding\Editor\WaypointEditor.cs" />
+ <Reference Include="Assembly-UnityScript">
+ <HintPath>D:/Work/LD36/LD36/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Advertisements">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
+ </Reference>
+ <Reference Include="nunit.framework">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.EditorTestsRunner">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/EditorTestsRunner/Editor/UnityEditor.EditorTestsRunner.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/Editor/UnityEditor.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEditor.Networking">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/Editor/UnityEditor.Networking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.TreeEditor">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/TreeEditor/Editor/UnityEditor.TreeEditor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+ <HintPath>D:/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp.csproj">
+      <Project>{77814973-4361-BB97-7FC6-6BCACF566D60}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

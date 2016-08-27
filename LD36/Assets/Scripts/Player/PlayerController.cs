@@ -9,13 +9,20 @@ public class PlayerController : MonoBehaviour {
 
 	public GameObject playerObject;
 	public float speed = 5f;
-	public float turnSpeed = 20f;
+	public float turnSpeed = 40f;
+	public BasicWeapon currentGun;
 
 	// Use this for initialization
 	void Start () {
 
 		if (playerObject == null) {
 			Debug.LogError("You forgett the player, dick ass!");
+		}
+
+		this.currentGun = GetComponent<Shotgun>();
+
+		if (this.currentGun == null) {
+			Debug.Log("FUCK!");
 		}
 
 	}
@@ -42,7 +49,16 @@ public class PlayerController : MonoBehaviour {
 			playerObject.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime, Space.World);
             playerObject.SendMessage("StartMove");
         }
-        if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.UpArrow))
+
+		if (Input.GetKeyUp(KeyCode.Alpha1)) {
+			this.currentGun = GetComponent<Gun>();
+		}
+
+		if (Input.GetKeyUp (KeyCode.Alpha2)) {
+			this.currentGun = GetComponent<Shotgun>();
+		}
+
+		if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             playerObject.SendMessage("StopMove");
         }
@@ -50,8 +66,7 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Vector3 fwd = playerObject.transform.TransformDirection(Vector3.forward) * 10;
 			Debug.DrawRay(playerObject.transform.position, fwd, Color.red);
-			//playerObject.GetComponent<Shoot>().shoot();
-            playerObject.SendMessage("shoot");
+			this.currentGun.fire();
 
         }
 	}

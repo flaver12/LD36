@@ -3,9 +3,11 @@ using System.Collections;
 
 public class Shotgun : BasicWeapon {
 
-	// Use this for initialization
 	void Start () {
+
+		//Set here the class variables
 		this.distance = 10;
+		this.isShotgun = true;
 	}
 	
 	// Update is called once per frame
