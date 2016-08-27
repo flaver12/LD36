@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
 			Debug.LogError("You forgett the player, dick ass!");
 		}
 
-		this.currentGun = GetComponent<Shotgun>();
+        this.currentGun = GameObject.FindGameObjectWithTag("Shotgun").GetComponent<BasicWeapon>();
 
 		if (this.currentGun == null) {
 			Debug.Log("FUCK!");
@@ -41,13 +41,13 @@ public class PlayerController : MonoBehaviour {
         }
 
 		if (Input.GetKey(KeyCode.LeftArrow)) {
-			playerObject.transform.Rotate(Vector3.down * turnSpeed *  Time.deltaTime, Space.World);
-            playerObject.SendMessage("StartMove");
+			playerObject.transform.Rotate(Vector3.down * turnSpeed *  Time.deltaTime);
+            // playerObject.SendMessage("StartMove");
         }
 
 		if (Input.GetKey(KeyCode.RightArrow)) {
-			playerObject.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime, Space.World);
-            playerObject.SendMessage("StartMove");
+			playerObject.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
+            // playerObject.SendMessage("StartMove");
         }
 
 		if (Input.GetKeyUp(KeyCode.Alpha1)) {
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour {
 			this.currentGun = GetComponent<Shotgun>();
 		}
 
-		if (Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.UpArrow))
+		if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.UpArrow))
         {
             playerObject.SendMessage("StopMove");
         }
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour {
 			Vector3 fwd = playerObject.transform.TransformDirection(Vector3.forward) * 10;
 			Debug.DrawRay(playerObject.transform.position, fwd, Color.red);
 			this.currentGun.fire();
-
+            playerObject.SendMessage("shoot");
         }
 	}
 }

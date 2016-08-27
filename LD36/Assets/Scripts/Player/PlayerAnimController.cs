@@ -12,4 +12,7 @@ public class PlayerAnimController : MonoBehaviour {
     {
         weaponAnimator.SetBool("isWalking", false);
     }
+    public void shoot() {
+        weaponAnimator.SetTrigger("Shooting");
+    }
 }
