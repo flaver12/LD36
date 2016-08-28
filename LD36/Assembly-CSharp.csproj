@@ -71,6 +71,7 @@
      <Compile Include="Assets\RotateGround.cs" />
      <Compile Include="Assets\Scripts\Camera\RenderSettings.cs" />
      <Compile Include="Assets\Scripts\Enemy\AIHandler.cs" />
+     <Compile Include="Assets\Scripts\Helper\GameObjectHelper.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\LoadLevelLD36.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\RandomTexture.cs" />
