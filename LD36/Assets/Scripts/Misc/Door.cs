@@ -9,16 +9,23 @@ public class Door : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     public void OnTriggerEnter(Collider other)
     {
-        audioSource.Play();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+        
         doorAnimC.SetBool("isOpen", true);
     }
 
     public void OnTriggerExit(Collider other)
     {
-        audioSource.Play();
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
         doorAnimC.SetBool("isOpen", false);
     }
-
 }
