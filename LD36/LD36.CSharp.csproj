@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerAudioController.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\Shoot.cs" />
+    <Compile Include="Assets\Scripts\Player\becomeBatman.cs" />
     <Compile Include="Assets\Scripts\Weapons\BasicWeapon.cs" />
     <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
     <Compile Include="Assets\Scripts\Weapons\Shotgun.cs" />
