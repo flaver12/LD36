@@ -28,23 +28,23 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey(KeyCode.UpArrow)) {
 			playerObject.transform.Translate(Vector3.forward * speed * Time.deltaTime);
-            playerObject.SendMessage("StartMove");
+            playerObject.BroadcastMessage("StartMove");
 
         }
 
 		if (Input.GetKey(KeyCode.DownArrow)) {
 			playerObject.transform.Translate(Vector3.back * speed *  Time.deltaTime);
-            playerObject.SendMessage("StartMove");
+            playerObject.BroadcastMessage("StartMove");
         }
 
 		if (Input.GetKey(KeyCode.LeftArrow)) {
 			playerObject.transform.Rotate(Vector3.down * turnSpeed *  Time.deltaTime);
-            // playerObject.SendMessage("StartMove");
+            // playerObject.BroadcastMessage("StartMove");
         }
 
 		if (Input.GetKey(KeyCode.RightArrow)) {
 			playerObject.transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime);
-            // playerObject.SendMessage("StartMove");
+            // playerObject.BroadcastMessage("StartMove");
         }
 
 		if (Input.GetKeyUp(KeyCode.Alpha1)) {
@@ -57,14 +57,14 @@ public class PlayerController : MonoBehaviour {
 
 		if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.UpArrow))
         {
-            playerObject.SendMessage("StopMove");
+            playerObject.BroadcastMessage("StopMove");
         }
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Vector3 fwd = playerObject.transform.TransformDirection(Vector3.forward) * 10;
 			Debug.DrawRay(playerObject.transform.position, fwd, Color.red);
-            playerObject.SendMessage("shoot");
-			playerObject.SendMessage("StartShooting", this.currentGun);
+            playerObject.BroadcastMessage("shoot");
+			playerObject.BroadcastMessage("StartShooting", this.currentGun);
         }
 	}
 

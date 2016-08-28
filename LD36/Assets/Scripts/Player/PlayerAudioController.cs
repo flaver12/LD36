@@ -10,12 +10,11 @@ public class PlayerAudioController : MonoBehaviour
     public float playTime = 1f;
     public AudioClip footStep;
 	public AudioClip shotgun;
-    public AudioSource audioSource;
-	public AudioSource audioSourceForGun;
+    private AudioSource[] audioSources;
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSources = GetComponents<AudioSource>();
     }
 
     // Use this for initialization
@@ -26,13 +25,13 @@ public class PlayerAudioController : MonoBehaviour
             // Debug.Log("Play Sound");
             canPlayStepSound = false;
 
-            if (audioSource.clip != footStep)
+            if (audioSources[0].clip != footStep)
             {
-                audioSource.clip = footStep;
+                audioSources[0].clip = footStep;
             }
 
-            audioSource.pitch = Random.Range(.8f, 1.2f);
-            audioSource.Play();
+            audioSources[0].pitch = Random.Range(.8f, 1.2f);
+            audioSources[0].Play();
 
             StartCoroutine(waitForNextStepSound(playTime));
         }
@@ -57,11 +56,10 @@ public class PlayerAudioController : MonoBehaviour
 		if(weapon.getWeaponType() == BasicWeapon.Type.SHOTGUN) {
 			
 			if (canPlayShotSound) {
-				
-				canPlayShotSound = false;
+                canPlayShotSound = false;
 				StartCoroutine (waitForNextShotSound (playTime));
-				audioSourceForGun.clip = shotgun;
-				audioSourceForGun.Play ();
+                audioSources[1].clip = shotgun;
+                audioSources[1].Play ();
 
 			}
 
