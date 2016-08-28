@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerAudioController : MonoBehaviour {
+public class PlayerAudioController : MonoBehaviour
+{
 
     private bool canPlayStepSound = true;
     public float playTime = 1f;
@@ -19,9 +20,16 @@ public class PlayerAudioController : MonoBehaviour {
         {
             // Debug.Log("Play Sound");
             canPlayStepSound = false;
-            StartCoroutine(waitForNextStepSound(playTime));
-            audioSource.clip = footStep;
+
+            if (audioSource.clip != footStep)
+            {
+                audioSource.clip = footStep;
+            }
+
+            audioSource.pitch = Random.Range(.8f, 1.2f);
             audioSource.Play();
+
+            StartCoroutine(waitForNextStepSound(playTime));
         }
     }
 

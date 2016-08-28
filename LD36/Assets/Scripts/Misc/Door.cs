@@ -9,6 +9,7 @@ public class Door : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
+
     public void OnTriggerEnter(Collider other)
     {
         audioSource.Play();
