@@ -3,15 +3,9 @@ using System.Collections;
 
 public class Shotgun : BasicWeapon {
 
-	void Start () {
-
-		//Set here the class variables
+	public Shotgun() {
 		this.distance = 10;
-		this.isShotgun = true;
+		this.type = Type.SHOTGUN;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

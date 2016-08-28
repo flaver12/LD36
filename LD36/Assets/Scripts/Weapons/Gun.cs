@@ -4,13 +4,9 @@ using System.Collections;
 public class Gun : BasicWeapon {
 
 	// Use this for initialization
-	void Start () {
+	public Gun () {
 		this.distance = 20;
-		this.isShotgun = false;
+		this.type = BasicWeapon.Type.GUN;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }

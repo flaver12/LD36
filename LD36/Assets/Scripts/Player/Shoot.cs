@@ -7,11 +7,13 @@ public class Shoot : MonoBehaviour {
 	
 		RaycastHit hit;
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		PlayerController pc = player.GetComponent<PlayerController> ();
 		Vector3 fwd = player.transform.TransformDirection(Vector3.forward);
 
-		if(Physics.Raycast(player.transform.position, fwd, out hit, player.GetComponent<PlayerController>().currentGun.getDistance())) {
+		if(Physics.Raycast(player.transform.position, fwd, out hit, pc.getSelectedGun().getDistance())) {
+			Debug.Log (hit.transform.tag);
 			if(hit.transform.tag == "Enemy") {
-				Debug.Log("Hit a enemy! in " + player.GetComponent<PlayerController>().currentGun.getDistance());
+				Debug.Log("Hit a enemy! in " + pc.getSelectedGun().getDistance());
 				hit.transform.GetComponent<AIHandler>().hit();
 			}
 		}

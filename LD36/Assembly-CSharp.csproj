@@ -38,10 +38,10 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -73,18 +73,21 @@
      <Compile Include="Assets\Scripts\Enemy\AIHandler.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\LoadLevel.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\LoadLevelLD36.cs" />
+     <Compile Include="Assets\Scripts\LevelLoader\RandomTexture.cs" />
      <Compile Include="Assets\Scripts\LevelLoader\RecalculateNavMesh.cs" />
+     <Compile Include="Assets\Scripts\Misc\Door.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerAnimController.cs" />
+     <Compile Include="Assets\Scripts\Player\PlayerAudioController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\Shoot.cs" />
      <Compile Include="Assets\Scripts\Weapons\BasicWeapon.cs" />
      <Compile Include="Assets\Scripts\Weapons\Gun.cs" />
      <Compile Include="Assets\Scripts\Weapons\Shotgun.cs" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

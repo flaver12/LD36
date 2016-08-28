@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour {
 	public GameObject playerObject;
 	public float speed = 5f;
 	public float turnSpeed = 40f;
-	public BasicWeapon currentGun;
+
+	private BasicWeapon currentGun;
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +20,7 @@ public class PlayerController : MonoBehaviour {
 			Debug.LogError("You forgett the player, dick ass!");
 		}
 
-        this.currentGun = GameObject.FindGameObjectWithTag("Shotgun").GetComponent<BasicWeapon>();
-
-		if (this.currentGun == null) {
-			Debug.Log("FUCK!");
-		}
+		this.currentGun = new Shotgun();
 
 	}
 	
@@ -66,8 +63,12 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			Vector3 fwd = playerObject.transform.TransformDirection(Vector3.forward) * 10;
 			Debug.DrawRay(playerObject.transform.position, fwd, Color.red);
-			this.currentGun.fire();
             playerObject.SendMessage("shoot");
+			playerObject.SendMessage("StartShooting", this.currentGun);
         }
+	}
+
+	public BasicWeapon getSelectedGun() {
+		return this.currentGun;
 	}
 }

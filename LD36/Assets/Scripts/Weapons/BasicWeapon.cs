@@ -1,22 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BasicWeapon : MonoBehaviour {
+public class BasicWeapon {
+
+	public enum Type {SHOTGUN, GUN};
 
 	protected int distance;
-	protected bool isShotgun;
+	protected Type type;
 
 	public int getDistance (){
 		return this.distance;
 	}
-
-	public bool getIsShotgun() {
-		return this.isShotgun;
-	}
-
-	public void fire() {
-		GetComponent<Shoot>().shoot();
-	}
 		
+	public Type getWeaponType() {
+		return this.type;
+	}
 }
 
