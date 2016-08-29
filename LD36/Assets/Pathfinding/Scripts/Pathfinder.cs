@@ -114,7 +114,8 @@ public class Pathfinder : MonoBehaviour
         int height = (int)((endZ - startZ) / Tilesize);
 
         //Set map up
-        Map = new Node[width, height];
+		print(width.ToString() + " " + height.ToString());
+		Map = new Node[width, height];
         int size = width* height;
         SetListsSize(size);
 

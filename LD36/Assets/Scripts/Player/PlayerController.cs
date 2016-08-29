@@ -3,6 +3,7 @@
 //It controls the player
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 [RequireComponent(typeof(CharacterController))]
@@ -14,6 +15,8 @@ public class PlayerController : MonoBehaviour {
 
 	private BasicWeapon currentGun;
 	private CharacterController controller;
+	private int health = 100;
+	private Text txt;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 
 		this.currentGun = new Shotgun();
 		this.controller = GetComponent<CharacterController>();
+		this.txt = GetComponent<Text>();
 
 	}
 	
@@ -76,12 +80,25 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) {
 			Vector3 fwd = playerObject.transform.TransformDirection (Vector3.forward) * 10;
 			Debug.DrawRay (playerObject.transform.position, fwd, Color.red);
-			playerObject.BroadcastMessage ("shoot");
+			playerObject.BroadcastMessage ("shoot", "Enemy");
 			playerObject.BroadcastMessage ("StartShooting", this.currentGun);
 		}
 	}
 
 	public BasicWeapon getSelectedGun() {
 		return this.currentGun;
+	}
+
+	public void takeDamge(int amount) {
+		if (this.health >= 0) {
+			this.health -= amount;
+		}
+		Debug.Log (this.health.ToString());
+		this.txt.text = "Health " + this.health;
+	}
+
+	public void heal(int amount) {
+		this.health += amount;
+		this.txt.text = "Health " + this.health;
 	}
 }

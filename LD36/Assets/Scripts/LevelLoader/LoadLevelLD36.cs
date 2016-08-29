@@ -32,8 +32,8 @@ public class LoadLevelLD36: MonoBehaviour {
 
 
         // TODO: make this Dynamic and fitting to the current Loaded map
-        Pathfinder pf = GameObject.Find("Pathfinder").GetComponent<Pathfinder>();
+        /*Pathfinder pf = GameObject.Find("Pathfinder").GetComponent<Pathfinder>();
         pf.MapEndPosition = new Vector2(-200, -200);
-        pf.MapStartPosition = new Vector2(200, 200);
+        pf.MapStartPosition = new Vector2(200, 200);*/
     }
 }

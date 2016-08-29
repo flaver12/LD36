@@ -7,6 +7,6 @@ public class RecalculateNavMesh : MonoBehaviour
     void Start()
     {
         Bounds bR = GetComponent<Renderer>().bounds;
-        Pathfinder.Instance.DynamicRaycastUpdate(bR);
+        //Pathfinder.Instance.DynamicRaycastUpdate(bR);
     }
 }
